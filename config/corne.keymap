@@ -32,10 +32,10 @@
 //                    | GUI | LWR | HYPER/ESC |   | SPC | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
-        &kp TAB   &kp Q &kp W &kp F    &kp P &kp G               &kp J     &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-        &kp LCTRL &kp A &kp R &kp S    &kp T &kp D               &kp H     &kp N  &kp E     &kp I   &kp O    &kp SQT
-        &kp LSHFT &kp Z &kp X &kp C    &kp V &kp B               &kp K     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                     &kp LGUI &mo 1 &tp RC(RS(RA(RGUI))) ESC     &kp SPACE &mo 2  &kp RALT
+        &kp TAB   &kp Q &kp W &kp F    &kp P &kp G            &kp J     &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+        &kp LCTRL &kp A &kp R &kp S    &kp T &kp D            &kp H     &kp N  &kp E     &kp I   &kp O    &kp SQT
+        &kp LSHFT &kp Z &kp X &kp C    &kp V &kp B            &kp K     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
+                     &kp LGUI &mo 1 &tp RC(RS(RA(RGUI))) ESC  &kp SPACE &mo 2  &kp RALT
                         >;
                 };
                 layer_below {
@@ -46,24 +46,24 @@
 //                    | GUI |     | HYPER/ESC |   | SPC | RSE | ALT |
                         display-name = "Lower";
                         bindings = <
-   &kp TAB   &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT                    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp TILDE &trans &trans   &trans   &trans                       &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans
-   &kp LSHFT &kp GRAVE &trans &trans   &trans   &trans                       &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp RET
-                              &kp LGUI &trans   &tp RC(RS(RA(RGUI))) ESC     &kp SPACE &mo 2  &kp RALT
+   &kp TAB   &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT                 &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &kp LCTRL &kp TILDE &trans &trans   &trans   &trans                    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans
+   &kp LSHFT &kp GRAVE &trans &trans   &trans   &trans                    &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp RET
+                              &kp LGUI &trans   &tp RC(RS(RA(RGUI))) ESC  &kp SPACE &mo 2  &kp RALT
                         >;
                 };
                 layer_above {
 // -----------------------------------------------------------------------------------------
-// | TAB  | F1  | F2  | F3  | F4  | F5  |         | F6  | F7  | F8  | F9  | F10 | BKSP |
-// | CTRL |  1  |  2  |  3  |  4  |  5  |         |  6  |  7  |  8  |  9  |  0  |      |
-// | SHFT |     |     |     |     |     |         |     | LFT | DWN | UP  | RGT | ENT  |
-//                    | GUI | LWR | HYPER/ESC |   | SPC |     | ALT |
+// | TAB  | BRID | BRID | PRV | PP  | NXT |         | PWR | SLP | VOLD | VOLU |     | BKSP |
+// | CTRL |  1   |  2   |  3  |  4  |  5  |         |  6  |  7  |  8   |  9   | 0   |      |
+// | SHFT |      |      |     |     |     |         |     | LFT | DWN  | UP   | RGT | ENT  |
+//                      | GUI | LWR | HYPER/ESC |   | SPC |     | ALT  |
                         display-name = "Raise";
                         bindings = <
-&kp TAB   &kp F1 &kp F2 &kp F3   &kp F4 &kp F5                       &kp F6    &kp F7   &kp F8   &kp F9   &kp F10   &kp BSPC
-&kp LCTRL &kp N1 &kp N2 &kp N3   &kp N4 &kp N5                       &kp N6    &kp N7   &kp N8   &kp N9   &kp N0    &trans
-&kp LSHFT &trans &trans &trans   &trans &trans                       &trans    &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp RET
-                                 &kp LGUI &trans &tp RC(RS(RA(RGUI))) ESC     &kp SPACE &trans   &kp RALT
+&kp TAB   &kp C_BRI_UP &kp C_BRI_DN &kp C_PREV &kp C_PP &kp C_NEXT                &kp C_PWR &kp C_SLEEP &kp C_VOL_DN &kp C_VOL_UP &kp       &kp BSPC
+&kp LCTRL &kp N1       &kp N2       &kp N3     &kp N4   &kp N5                    &kp N6    &kp N7      &kp N8       &kp N9       &kp N0    &trans
+&kp LSHFT &trans       &trans       &trans     &trans   &trans                    &trans    &kp LEFT    &kp DOWN     &kp UP       &kp RIGHT &kp RET
+                                    &kp LGUI   &trans   &tp RC(RS(RA(RGUI))) ESC  &kp SPACE &trans      &kp RALT
                         >;
                 };
         };
