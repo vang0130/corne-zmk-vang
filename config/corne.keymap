@@ -5,11 +5,12 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
 / {
-        behaviors {
-          tp: tap_preferred {
+    behaviors {
+        tp: tap_preferred {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_PREFERRED";
             #binding-cells = <2>;
@@ -17,53 +18,58 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-          }; 
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  |  Q  |  W  |  F  |  P  |  G  |         |  J  |  L   |  U  |  Y  |  ;  | BKSP |
+            // | CTRL |  A  |  R  |  S  |  T  |  D  |         |  H  |  N   |  E  |  I  |  O  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |         |  K  |  M   |  ,  |  .  |  /  | ENT  |
+            //                    | GUI | LWR | HYPER/ESC |   | SPC | RSE  | ALT |
+
+            display-name = "Base";
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp G                       &kp J      &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
+&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp D                       &kp H      &kp N  &kp E      &kp I    &kp O     &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B                       &kp K      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
+                         &kp LGUI  &mo 1  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2  &kp RALT
+            >;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
+        layer_below {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  | BKSP |
+            // | CTRL |  ~  |     |     |     |     |         |  -  |  =  |  [  |  ]  |  \  |      |
+            // | SHFT |  `  |     |     |     |     |         |  _  |  +  |  {  |  }  | "|" | ENT  |
+            //                    | GUI |     | HYPER/ESC |   | SPC | RSE | ALT |
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  G  |         |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-// | CTRL |  A  |  R  |  S  |  T  |  D  |         |  H  |  N   |  E  |  I  |  O  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |         |  K  |  M   |  ,  |  .  |  /  | ENT  |
-//                    | GUI | LWR | HYPER/ESC |   | SPC | RSE  | ALT |
-                        display-name = "Base";
-                        bindings = <
-        &kp TAB   &kp Q &kp W &kp F    &kp P &kp G            &kp J     &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-        &kp LCTRL &kp A &kp R &kp S    &kp T &kp D            &kp H     &kp N  &kp E     &kp I   &kp O    &kp SQT
-        &kp LSHFT &kp Z &kp X &kp C    &kp V &kp B            &kp K     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                     &kp LGUI &mo 1 &tp RC(RS(RA(RGUI))) ESC  &kp SPACE &mo 2  &kp RALT
-                        >;
-                };
-                layer_below {
-// -----------------------------------------------------------------------------------------
-// | TAB  |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  ~  |     |     |     |     |         |  -  |  =  |  [  |  ]  |  \  |      |
-// | SHFT |  `  |     |     |     |     |         |  _  |  +  |  {  |  }  | "|" | ENT  |
-//                    | GUI |     | HYPER/ESC |   | SPC | RSE | ALT |
-                        display-name = "Lower";
-                        bindings = <
-   &kp TAB   &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT                 &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp TILDE &trans &trans   &trans   &trans                    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans
-   &kp LSHFT &kp GRAVE &trans &trans   &trans   &trans                    &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp RET
-                              &kp LGUI &trans   &tp RC(RS(RA(RGUI))) ESC  &kp SPACE &mo 2     &kp RALT
-                        >;
-                };
-                layer_above {
-// -----------------------------------------------------------------------------------------
-// | TAB  | BRID  | BRID | PRV | PP  | NXT |         |       | MUTE | VOLD | VOLU |     | BKSP |
-// | CTRL |  1    |  2   |  3  |  4  |  5  |         |   6   |  7   |  8   |  9   | 0   |      |
-// | SHFT | BTCLR | BT1  | BT2 | BT3 | BT4 |         | GLOBE | LFT  | DWN  | UP   | RGT | ENT  |
-//                       | GUI | LWR | HYPER/ESC |   |  SPC  |      | ALT  |
-                        display-name = "Raise";
-                        bindings = <
-&kp TAB   &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV   &kp C_PP     &kp C_NEXT                &trans    &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans    &kp BSPC
-&kp LCTRL &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                    &kp N6    &kp N7     &kp N8       &kp N9       &kp N0    &trans
-&kp LSHFT &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3              &kp GLOBE &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT &kp RET
-                                    &kp LGUI     &mo 1      &tp RC(RS(RA(RGUI))) ESC    &kp SPACE &trans     &kp RALT
-                        >;
-                };
+            display-name = "Lower";
+            bindings = <
+&kp TAB    &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &kp TILDE  &trans  &trans    &trans    &trans                      &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &trans
+&kp LSHFT  &kp GRAVE  &trans  &trans    &trans    &trans                      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp RET
+                              &kp LGUI  &trans    &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2      &kp RALT
+            >;
         };
+
+        layer_above {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  | BRID  | BRID | PRV | PP  | NXT |         |       | MUTE | VOLD | VOLU |     | BKSP |
+            // | CTRL |  1    |  2   |  3  |  4  |  5  |         |   6   |  7   |  8   |  9   | 0   |      |
+            // | SHFT | BTCLR | BT1  | BT2 | BT3 | BT4 |         | GLOBE | LFT  | DWN  | UP   | RGT | ENT  |
+            //                       | GUI | LWR | HYPER/ESC |   |  SPC  |      | ALT  |
+
+            display-name = "Raise";
+            bindings = <
+&kp TAB    &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT                  &trans                                &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans     &kp BSPC
+&kp LCTRL  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                      &kp N6                                &kp N7      &kp N8        &kp N9        &kp N0     &trans
+&kp LSHFT  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT  &kp RET
+                                       &kp LGUI      &mo 1         &tp RC(RS(RA(RGUI))) ESC    &kp SPACE                             &trans      &kp RALT
+            >;
+        };
+    };
 };
