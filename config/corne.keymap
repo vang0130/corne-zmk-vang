@@ -46,7 +46,7 @@
             // | SHFT | BRID  | BRID | PRV | PP  | NXT |         | MUTE  | VOLD | VOLU |      |     | ENT  |
             //                       | GUI |     | HYPER/ESC |   |  SPC  | RSE  | ALT  |
 
-            display-name = "Raise";
+            display-name = "LWR";
             bindings = <
 &kp TAB   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                      &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    &kp BSPC
 &kp LCTRL &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp RIGHT &trans
@@ -61,13 +61,12 @@
             // | SHFT |  `  |     |     |     |     |         |  _  |  +  |  {  |  }  | "|" | ENT  |
             //                    | GUI | LWR | HYPER/ESC |   | SPC |     | ALT |
 
-            display-name = "Lower";
+            display-name = "RSE";
             bindings = <
 &kp TAB    &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &kp LCTRL  &kp TILDE  &trans  &trans    &trans    &trans                      &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &trans
 &kp LSHFT  &kp GRAVE  &trans  &trans    &trans    &trans                      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp RET
-                              &kp LGUI  &mo 1    &tp RC(RS(RA(RGUI))) ESC     &kp SPACE  &trans     &kp LALT
-
+                              &kp LGUI  &mo 1     &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &trans     &kp LALT
             >;
         };
     };
