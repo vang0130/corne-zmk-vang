@@ -41,32 +41,47 @@
         };
         layer_below {
             // -----------------------------------------------------------------------------------------
-            // | TAB  |  1    |  2   |  3  |  4  |  5  |         |   6   |  7   |  8   |  9   | 0   | BKSP |
-            // | CTRL | BTCLR | BT1  | BT2 | BT3 | BT4 |         | LFT   | DWN  | UP   | RGT  |     |      |
-            // | SHFT | BRID  | BRID | PRV | PP  | NXT |         | MUTE  | VOLD | VOLU |      |     | ENT  |
-            //                       | GUI |     | HYPER/ESC |   |  SPC  | RSE  | ALT  |
+            // | TAB  |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  | BKSP |
+            // | CTRL |  ~  |     |     |     |     |         |  -  |  =  |  [  |  ]  |  \  |      |
+            // | SHFT |  `  |     |     |     |     |         |  _  |  +  |  {  |  }  | "|" | ENT  |
+            //                    | GUI |     | HYPER/ESC |   | SPC | RSE | ALT |
 
-            display-name = "LWR";
+            display-name = "LOWER";
             bindings = <
-&kp TAB   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                      &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    &kp BSPC
-&kp LCTRL &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp RIGHT &trans
-&kp LSHFT &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT                  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans     &trans    &kp RET
-                                      &kp LGUI      &trans        &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2      &kp LALT
+&kp TAB    &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &kp TILDE  &trans  &trans    &trans    &trans                      &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &trans
+&kp LSHFT  &kp GRAVE  &trans  &trans    &trans    &trans                      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp RET
+                              &kp LGUI  &mo 1     &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2      &kp LALT
             >;
         };
         layer_above {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  |  1    |  2   |  3  |  4  |  5  |         |   6   |  7   |  8   |  9   | 0   | BKSP |
+            // | CTRL | BTCLR | BT1  | BT2 | BT3 | BT4 |         | LFT   | DWN  | UP   | RGT  |     |      |
+            // | SHFT | BRID  | BRID | PRV | PP  | NXT |         | MUTE  | VOLD | VOLU | GAME |     | ENT  |
+            //                       | GUI |     | HYPER/ESC |   |  SPC  | RSE  | ALT  |
+
+            display-name = "RAISE";
+            bindings = <
+&kp TAB   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                      &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    &kp BSPC
+&kp LCTRL &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp RIGHT &trans
+&kp LSHFT &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT                  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &tog 3     &trans    &kp RET
+                                      &kp LGUI      &mo 1        &tp RC(RS(RA(RGUI))) ESC     &kp SPACE  &mo 2      &kp LALT
+            >;
+        };
+        gaming {
             // -----------------------------------------------------------------------------------------
             // | TAB  |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |  ~  |     |     |     |     |         |  -  |  =  |  [  |  ]  |  \  |      |
             // | SHFT |  `  |     |     |     |     |         |  _  |  +  |  {  |  }  | "|" | ENT  |
             //                    | GUI | LWR | HYPER/ESC |   | SPC |     | ALT |
 
-            display-name = "RSE";
+            display-name = "GAME";
             bindings = <
 &kp TAB    &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &kp LCTRL  &kp TILDE  &trans  &trans    &trans    &trans                      &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &trans
 &kp LSHFT  &kp GRAVE  &trans  &trans    &trans    &trans                      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp RET
-                              &kp LGUI  &mo 1     &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &trans     &kp LALT
+                              &kp LGUI  &mo 2     &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &trans     &kp LALT
             >;
         };
     };
