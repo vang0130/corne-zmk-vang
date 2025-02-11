@@ -21,6 +21,7 @@
         };
     };
     combos {
+        compatible = "zmk,combos";
         toggle_layer_1 {
             key-positions = <36 37>;
             bindings = <&tog 1>;
