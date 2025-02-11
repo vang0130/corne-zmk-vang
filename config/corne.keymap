@@ -23,7 +23,7 @@
     combos {
         toggle_layer_1 {
             timeout-ms = <50>;
-            key-positions = <36 39>;
+            key-positions = <36 38>;
             bindings = <&tog 1>;
         };
     };
