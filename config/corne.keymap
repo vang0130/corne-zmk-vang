@@ -22,9 +22,13 @@
     };
     combos {
         compatible = "zmk,combos";
-        toggle_layer_1 {
-            key-positions = <36 37>;
+        toggle_gaming {
+            key-positions = <36 38>;
             bindings = <&tog 1>;
+        };
+        toggle_numpad {
+            key-positions = <39 41>;
+            bindings = <&tog 4>;
         };
     };
     keymap {
@@ -48,16 +52,16 @@
         gaming {
             // -----------------------------------------------------------------------------------------
             // | TAB  |  Q  |  W  |  E  |  R  |  T  |         |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |         |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |         |  N  |  M   |  ,  |  .  |  /  | ENT  |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |         |  H  |  J   | UP  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |         |  N  | LFT  | DWN | RGT |  /  | ENT  |
             //                    | GUI | LWR | HYPER/ESC |   | SPC | RSE  | ALT |
 
             display-name = "GAME";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T                       &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D    &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C    &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
-                         &kp LGUI &mo 3  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2  &kp LALT
+&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T                       &kp Y      &kp U    &kp I      &kp O     &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D    &kp F  &kp G                       &kp H      &kp J    &kp UP     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C    &kp V  &kp B                       &kp N      &kp LEFT &kp DOWN   &kp RIGHT &kp FSLH  &kp RET
+                         &kp LGUI &mo 2  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 3    &kp LALT
             >;
         };
         layer_below {
@@ -88,6 +92,21 @@
 &kp LCTRL &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp RIGHT &trans
 &kp LSHFT &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT                  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans     &trans    &kp RET
                                       &kp LGUI      &mo 2        &tp RC(RS(RA(RGUI))) ESC     &kp SPACE  &mo 3        &kp LALT
+            >;
+        };
+        numpad {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  |     | UP  |     |     |     |         |     |  7   |  8  |  9  |  -  | BKSP |
+            // | CTRL | LFT | DWN | RGT |     |     |         |  /  |  4   |  5  |  6  |  +  |      |
+            // | SHFT |     |     |     |     |     |         |  *  |  1   |  2  |  3  |  .  | ENT  |
+            //                    | GUI | LWR | HYPER/ESC |   | SPC |  0   | ALT |
+
+            display-name = "NUM";
+            bindings = <
+&kp TAB     &trans   &kp UP   &trans    &trans &trans                      &trans          &kp N7 &kp N8   &kp N9 &kp MINUS &kp BSPC
+&kp LCTRL   &kp LEFT &kp DOWN &kp RIGHT &trans &trans                      &kp FSLH        &kp N4 &kp N5   &kp N6 &kp PLUS  &kp SQT
+&kp LSHIFT  &trans   &trans   &trans    &trans &trans                      &kp KP_MULTIPLY &kp N1 &kp N2   &kp N3 &kp DOT   &kp RET
+                              &kp LGUI  &trans &tp RC(RS(RA(RGUI))) ESC    &kp SPACE       &kp N0 &kp LALT
             >;
         };
     };
