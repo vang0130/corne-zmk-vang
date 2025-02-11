@@ -33,10 +33,10 @@
 
             display-name = "BASE";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E            &kp R  &kp T                       &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D            &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C            &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
-                         &tp (tog 1) LGUI &mo 2  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 3  &kp LALT
+&kp TAB    &kp Q  &kp W  &kp E      &kp R  &kp T                       &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D      &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C      &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
+                         &lt 1 LGUI &mo 2  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 3  &kp LALT
             >;
         };
         gaming {
@@ -48,10 +48,10 @@
 
             display-name = "GAME";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E            &kp R  &kp T                       &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D            &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C            &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
-                         &tp (tog 1) LGUI &mo 3  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2  &kp LALT
+&kp TAB    &kp Q  &kp W  &kp E      &kp R  &kp T                       &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D      &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C      &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
+                         &lt 1 LGUI &mo 3  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 2  &kp LALT
             >;
         };
         layer_below {
