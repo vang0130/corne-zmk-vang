@@ -22,10 +22,6 @@
     };
     combos {
         compatible = "zmk,combos";
-        toggle_gaming {
-            key-positions = <36 38>;
-            bindings = <&tog 1>;
-        };
         toggle_numpad {
             key-positions = <39 41>;
             bindings = <&tog 4>;
@@ -47,21 +43,6 @@
 &kp LCTRL  &kp A  &kp S  &kp D    &kp F  &kp G                       &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C    &kp V  &kp B                       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
                          &kp LGUI &mo 2  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 3  &kp LALT
-            >;
-        };
-        gaming {
-            // -----------------------------------------------------------------------------------------
-            // | TAB  |  Q  |  W  |  E  |  R  |  T  |         |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |         |  H  |  J   | UP  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |         |  N  | LFT  | DWN | RGT |  /  | ENT  |
-            //                    | GUI | LWR | HYPER/ESC |   | SPC | RSE  | ALT |
-
-            display-name = "GAME";
-            bindings = <
-&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T                       &kp Y      &kp U    &kp I      &kp O     &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D    &kp F  &kp G                       &kp H      &kp J    &kp UP     &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C    &kp V  &kp B                       &kp N      &kp LEFT &kp DOWN   &kp RIGHT &kp FSLH  &kp RET
-                         &kp LGUI &mo 2  &tp RC(RS(RA(RGUI))) ESC    &kp SPACE  &mo 3    &kp LALT
             >;
         };
         layer_below {
