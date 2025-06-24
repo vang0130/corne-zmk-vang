@@ -22,10 +22,6 @@
     };
     combos {
         compatible = "zmk,combos";
-        toggle_numpad {
-            key-positions = <39 41>;
-            bindings = <&tog 4>;
-        };
     };
     keymap {
         compatible = "zmk,keymap";
